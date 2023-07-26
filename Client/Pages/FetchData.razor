@@ -25,8 +25,7 @@ else
             @foreach (var forecast in forecasts)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.time</td>
                     <td>@forecast.TemperatureF</td>
                     <td>@forecast.Summary</td>
                 </tr>
@@ -42,7 +41,8 @@ else
     {
         try
         {
-            forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("/api/WeatherForecast") ?? new WeatherForecast[]{};
+            // forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("/api/WeatherForecast") ?? new WeatherForecast[]{};
+            forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("http://developer.cumtd.com/api/v2.2/JSON/GetDeparturesByStop?key=439218dcbc5448338f2f7ac3d80cb2f8&stop_id=GRGLIB&pt=30") ?? new WeatherForecast[]{};
         }
         catch (Exception ex)
         {
