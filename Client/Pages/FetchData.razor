@@ -22,12 +22,11 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
-            {
+          
                 <tr>
-                    <td>@forecast</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td>@forecasts.time</td>
+                    <td>@forecasts.stop_id</td>
+                    <td>@forecasts</td>
                 </tr>
             }
         </tbody>
