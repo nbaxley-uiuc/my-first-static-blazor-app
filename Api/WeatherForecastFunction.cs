@@ -50,7 +50,7 @@ namespace ApiIsolated
             }
             else if (temp <= 0)
             {
-                summary = "Freezing";
+                summary = "Freezing my ass";
             }
 
             return summary;
